@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exceptional Page</title>
+    <style>
+        /* General Styles */
+        body {
+            background-color: #121212;
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            color: white;
+            padding: 20px;
+        }
+
+        h2 {
+            font-size: 28px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            background: linear-gradient(45deg, #00CFFF, #007BFF);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Table Styles */
+        table {
+            width: 70%;
+            margin: auto;
+            border-collapse: separate;
+            border-spacing: 0;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            box-shadow: 0 0 15px rgba(0, 255, 255, 0.3);
+            border: 2px solid rgba(0, 255, 255, 0.4);
+        }
+
+        th, td {
+            padding: 15px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        th {
+            background: linear-gradient(45deg, #007BFF, #00CFFF);
+            color: white;
+            text-transform: uppercase;
+        }
+
+        tr:hover {
+            background-color: rgba(0, 255, 255, 0.2);
+            transition: 0.3s ease-in-out;
+        }
+
+        td {
+            color: white;
+        }
+
+        /* Numbered List Styles */
+        .numbered-list {
+            list-style: none;
+            counter-reset: my-counter;
+            padding: 0;
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .numbered-list li {
+            display: flex;
+            align-items: center;
+            background: linear-gradient(135deg, #007bff, #0056b3);
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+            position: relative;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .numbered-list li::before {
+            content: counter(my-counter);
+            counter-increment: my-counter;
+            font-size: 20px;
+            font-weight: bold;
+            background: white;
+            color: #007bff;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        /* Styled Link */
+        .styled-link {
+            text-decoration: none;
+            font-size: 22px;
+            color: white;
+            background: #ff6600;
+            padding: 12px 24px;
+            border-radius: 10px;
+            font-weight: bold;
+            display: inline-block;
+            text-align: center;
+            transition: transform 0.3s ease, background 0.3s ease;
+            margin-top: 20px;
+        }
+
+        .styled-link:hover {
+            background: #ff4500;
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .styled-link {
+            animation: fadeIn 0.8s ease-in-out;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>My Senator</h2>
+
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Position</th>
+            <th>Place Of Birth</th>
+        </tr>
+        <tr>
+            <td>Kiko Pangilanan</td>
+            <td>Senator</td>
+            <td>Manila</td>
+        </tr>
+        <tr>
+            <td>Bam Aquino</td>
+            <td>Senator</td>
+            <td>Manila</td>
+        </tr>
+        <tr>
+            <td>Heidi Mendoza</td>
+            <td>Senator</td>
+            <td>Tayabas</td>
+        </tr>
+        <tr>
+            <td>Sonny Matula</td>
+            <td>Senator</td>
+            <td>Sultan Sa Barungis</td>
+        </tr>
+        <tr>
+            <td>Danilo Ramos</td>
+            <td>Governor</td>
+            <td>Malolos</td>
+        </tr>
+        <tr>
+            <td>Luke Espirito</td>
+            <td>Lawyer</td>
+            <td>Bacolod</td>
+        </tr>
+    </table>
+
+    <h2>Website Features</h2>
+
+    <ul class="numbered-list">
+        <li>Innovative Web Design</li>
+        <li>Seamless User Experience</li>
+        <li>Responsive and Mobile-Friendly</li>
+        <li>Fast Loading Speeds</li>
+        <li>Secure and Reliable</li>
+    </ul>
+
+    <a href="website1.html" class="styled-link">Exit</a>
+
+</body>
+</html>

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Top 6 Senators: What They Can Do in the Senate</title>
+  <style>
+      /* Reset default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Georgia', serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(120deg, #f4f4f4, #e0e0e0);
+      transition: background 0.5s ease-in-out, color 0.3s;
+    }
+
+    /* Dark Mode Styles */
+    body.dark-mode {
+      background: #1a1a1a;
+      color: #f5f5f5;
+    }
+    body.dark-mode .senator-card {
+      background: linear-gradient(145deg, #2a2a2a, #1e1e1e);
+      color: #f5f5f5;
+      box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.2);
+    }
+    body.dark-mode .senator-card h2 {
+      color: #FFD700;
+    }
+    body.dark-mode nav {
+      background-color: #111;
+    }
+    body.dark-mode nav ul li a {
+      color: #FFD700;
+    }
+    body.dark-mode nav ul li a:hover {
+      color: #FFF;
+    }
+       /* Dark Mode Toggle Button */
+    .dark-mode-toggle {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      background: #DAA520;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 1rem;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+    .dark-mode-toggle:hover {
+      background: #FFD700;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(135deg, #001F3F, #003366);
+      color: #fff;
+      padding: 40px 0;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      position: relative;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: #002244;
+      padding: 12px 0;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    
+    /* Reset default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: 'Georgia', serif;
+      line-height: 1.6;
+      color: #333;
+      background: linear-gradient(120deg, #f4f4f4, #e0e0e0);
+      transition: background 1s ease-in-out, color 0.3s;
+    }
+    
+     
+    /* Header - Philippine Flag Wave Animation */
+    header {
+      background: linear-gradient(135deg, #001F3F, #003366);
+      color: #fff;
+      padding: 40px 0;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+      position: relative;
+      animation: waveBg 5s infinite alternate ease-in-out;
+    }
+    @keyframes waveBg {
+      0% { background-position: left top; }
+      100% { background-position: right bottom; }
+    }
+
+    /* Philippine Sun and Stars Animation */
+    .flag-elements {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      display: flex;
+      align-items: center;
+    }
+    .sun {
+      width: 40px;
+      height: 40px;
+      background: radial-gradient(circle, #FFD700, #DAA520);
+      border-radius: 50%;
+      position: relative;
+      animation: spinSun 8s linear infinite;
+    }
+    @keyframes spinSun {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+    .star {
+      width: 10px;
+      height: 10px;
+      background: #FFD700;
+      position: relative;
+      margin-left: 10px;
+      clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+    }
+
+    /* Navbar */
+    nav {
+      background-color: #002244;
+      padding: 12px 0;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav ul li {
+      margin: 0 20px;
+    }
+    nav ul li a {
+      color: #DAA520;
+      text-decoration: none;
+      font-size: 1.2rem;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #FFD700;
+    }
+
+    /* Senator Cards */
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 20px;
+    }
+    .senator-card {
+      position: relative;
+      border-radius: 10px;
+      padding: 25px;
+      margin-bottom: 25px;
+      background: linear-gradient(145deg, #FFFFFF, #f8f8f8);
+      box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    .senator-card:hover {
+      transform: scale(1.03) rotate(1deg);
+      box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.3);
+    }
+    .senator-card h2 {
+      color: #001F3F;
+      margin-bottom: 10px;
+      font-size: 1.8rem;
+    }
+    .senator-card p {
+      font-size: 1.1rem;
+    }
+    .senator-card a {
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px 15px;
+      background-color: #DAA520;
+      color: #fff;
+      text-decoration: none;
+      font-weight: bold;
+      border-radius: 5px;
+      transition: background 0.3s, transform 0.3s;
+    }
+    .senator-card a:hover {
+      background-color: #FFD700;
+      transform: scale(1.05);
+    }
+
+    /* Scroll Animation */
+    @keyframes fadeUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Top 6 Senators</h1>
+    <p>What They Can Do in the Senate</p>
+    <div class="flag-elements">
+      <div class="sun"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+      <div class="star"></div>
+    </div>
+  </header>
+
+  <nav>
+    <ul>
+      <li><a href="#senator1">KIKO PANGILINAN</a></li>
+      <li><a href="#senator2">BAM AQUINO</a></li>
+      <li><a href="#senator3">HEIDI MENDOZA</a></li>
+      <li><a href="#senator4">SONNY MATULA</a></li>
+      <li><a href="#senator5">DANILO RAMOS</a></li>
+      <li><a href="#senator6">LUKE ESPIRITO</a></li>
+    </ul>
+  </nav>
+
+  <div class="container">
+    <section id="senator1" class="senator-card">
+      <h2>KIKO PANGILINAN</h2>
+      <p>Committed to education reform and farmers’ rights.</p>
+      <a href="kiko.html">Learn More</a>
+    </section>
+
+    <section id="senator2" class="senator-card">
+      <h2>BAM AQUINO</h2>
+      <p>Advocates for youth empowerment and entrepreneurship.</p>
+      <a href="bam.html">Learn More</a>
+    </section>
+
+    <section id="senator3" class="senator-card">
+      <h2>HEIDI MENDOZA</h2>
+      <p>Fights for government transparency and accountability.</p>
+      <a href="heidi.html">Learn More</a>
+    </section>
+
+    <section id="senator4" class="senator-card">
+      <h2>SONNY MATULA</h2>
+      <p>Champion of labor rights and workers' welfare.</p>
+      <a href="sonny.html">Learn More</a>
+    </section>
+
+    <section id="senator5" class="senator-card">
+      <h2>DANILO RAMOS</h2>
+      <p>Advocates for agrarian reform and farmers' rights.</p>
+      <a href="danilo.html">Learn More</a>
+    </section>
+
+    <section id="senator6" class="senator-card">
+      <h2>LUKE ESPIRITO</h2>
+      <p>Defender of social justice and human rights.</p>
+      <a href="luke.html">Learn More</a>
+    </section>
+  </div>
+
+  <script>
+    function revealOnScroll() {
+      document.querySelectorAll(".senator-card").forEach((card) => {
+        if (card.getBoundingClientRect().top < window.innerHeight - 50) {
+          card.style.animation = "fadeUp 1s forwards";
+        }
+      });
+    }
+    window.addEventListener("scroll", revealOnScroll);
+    revealOnScroll();
+  </script><!--  -->
+ <a href="QUTE.html" class="see-more">See More</a>
+
+<style>
+  /* Center the button */
+  .see-more {
+    display: inline-block;
+    padding: 12px 24px;
+    font-family: 'Poppins', sans-serif; /* Use Google Fonts */
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+    background: linear-gradient(45deg, #ff416c, #ff4b2b); /* Vibrant gradient */
+    border-radius: 10px;
+    transition: all 0.4s ease-in-out;
+    text-align: center;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: pulseIn 1.2s ease-out; /* Entrance animation */
+    box-shadow: 0px 4px 10px rgba(255, 75, 43, 0.5);
+  }
+
+  /* Hover effect */
+  .see-more:hover {
+    background: linear-gradient(45deg, #ff4b2b, #ff416c); /* Reverse gradient */
+    transform: translateX(-50%) scale(1.15); /* Enlarged effect */
+    box-shadow: 0px 6px 15px rgba(255, 75, 43, 0.7);
+  }
+
+  /* Entrance pulse animation */
+  @keyframes pulseIn {
+    0% {
+      opacity: 0;
+      transform: translateX(-50%) scale(0.8);
+    }
+    60% {
+      opacity: 1;
+      transform: translateX(-50%) scale(1.1);
+    }
+    100% {
+      transform: translateX(-50%) scale(1);
+    }
+  }
+</style>
+    </section>
+    
+</body>
+</html>
